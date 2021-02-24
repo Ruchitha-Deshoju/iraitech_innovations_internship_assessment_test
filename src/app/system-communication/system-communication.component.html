@@ -1,0 +1,31 @@
+<!-- <div class="container">
+
+  
+
+    <app-component-one [newData]="updated_Data"></app-component-one>
+    <app-component-two [newData]="updated_Data"></app-component-two>
+
+    <app-component-five (updateText)="sendData($event)"></app-component-five> 
+    
+
+    <app-component-three [newData]="updated_Data"></app-component-three>
+    <app-component-four [newData]="updated_Data"></app-component-four>
+    
+</div> -->
+<div class="container">
+
+    <h1>Question-4</h1>
+
+
+    <app-component-five (updateText)="sendData($event)"></app-component-five> 
+    <br>
+    <br>
+
+    <div id="parent">
+        <p><app-component-one [newData]="updated_Data"></app-component-one></p>
+        <p><app-component-two [newData]="updated_Data"></app-component-two></p>
+        <p><app-component-three [newData]="updated_Data"></app-component-three></p>
+        <p><app-component-four [newData]="updated_Data"></app-component-four></p>
+    </div> 
+</div>
+

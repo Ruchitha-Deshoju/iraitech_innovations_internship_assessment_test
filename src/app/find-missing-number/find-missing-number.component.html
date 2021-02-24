@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Question-1</h1>
+
+    <h2>Find the missing number:</h2>
+
+    <div>
+        <h3>2, 3, 10, 15, 26, 35, 50, 63, ? </h3>
+        <p>series index starts with 1</p>
+        <form (ngSubmit)="onSubmit()" #f="ngForm">
+            <div class="form-group">
+                <input type="text" id="positionName" class="form-control" ngModel name="index_position" required placeholder="--enter any index--">
+                <button class="button" type="submit" [disabled]="!f.valid">Find Value</button>
+            </div>
+            
+        </form>
+    </div>
+    
+    <div>
+        <h3>Value: <span *ngIf="value != 0">{{value}}</span></h3>
+        
+    </div>
+</div>
+
+
+
+
+
+
+

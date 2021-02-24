@@ -1,0 +1,41 @@
+
+<div class="container">
+    <h1>Question-3</h1>
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <p>
+            <label for="user_name">User Name: </label>
+            <input type="text" id="user_name" name="user_name" formControlName="user_name" class="form-control">
+        </p>
+
+        <tabel class="tabel table-bordered" formArrayName="phoneNumbers">
+            <tr>
+                <th colspan="2">Add Phone Number:</th>
+                <th width="150px"><button type="button" (click)="addPhoneNumber()">{{ userForm.value.phoneNumbers.length == 0 ?  'Add number' : 'Additional number'}}</button></th>
+            </tr>
+            <tr *ngFor="let number of phoneNumbers().controls; let i=index" [formGroupName]="i">
+                <td>
+                    Number: 
+                    <input type="text" formControlName="phoneNumber" class="form-control">
+                </td>
+                <td>
+                    <button (click)="removeNumber(i)" *ngIf="userForm.value.phoneNumbers.length > 1">Remove</button>
+                </td>
+            </tr>
+        </tabel>
+
+        <br>
+        <button type="submit" class="button">Submit</button>
+    </form>
+
+    <br/>
+
+    <div *ngIf="output_data">
+        <h3>Output In the form of JSON</h3>
+        <p>
+            {{this.userForm.value.phoneNumbers | json}}
+        </p>
+    </div>
+       
+</div>
+
